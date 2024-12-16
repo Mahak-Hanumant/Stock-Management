@@ -18,7 +18,7 @@ export default function Home() {
     // Fetch products on load 
     const fetchProducts = async () => {
       const response = await fetch('/api/product')
-      let rjson = await response.json()
+      let rjson = await response.data.json()
       setProducts(rjson.products)
     }
     fetchProducts()
@@ -57,10 +57,12 @@ export default function Home() {
       body: JSON.stringify({ action, slug, initialQuantity })
     });
     let r = await response.json()
+    console.log(response)
     setLoadingaction(false)
   }
 
   const addProduct = async (e) => {
+    console.log(productForm)
     try {
       const response = await fetch('/api/product', {
         method: 'POST',
@@ -183,7 +185,7 @@ export default function Home() {
           </thead>
           <tbody>
             {products.map(product => {
-              return <tr key={product.slug}>
+                return <tr key={product.slug}>
                 <td className="border px-4 py-2">{product.slug}</td>
                 <td className="border px-4 py-2">{product.quantity}</td>
                 <td className="border px-4 py-2">₹{product.price}</td>

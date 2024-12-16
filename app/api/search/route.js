@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export async function GET(request) {
 const query = request.nextUrl.searchParams.get("query") 
 // Replace the uri string with your connection string.
-const uri = "mongodb+srv://mongodb:di9utTasUi4AHxoJ@mongoyoutube.nhtraxd.mongodb.net/";
+const uri = "mongodb+srv://mongodb:GXRGI5yEc2GDCtsw@cluster0.p4kgg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const client = new MongoClient(uri); 
   try {
     const database = client.db('stock');

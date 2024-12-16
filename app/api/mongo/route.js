@@ -7,10 +7,10 @@ export async function GET(request) {
 
 
 // Replace the uri string with your connection string.
-const uri = "mongodb+srv://mongodb:di9utTasUi4AHxoJ@mongoyoutube.nhtraxd.mongodb.net/";
+const uri = "mongodb+srv://mongodb:GXRGI5yEc2GDCtsw@cluster0.p4kgg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const client = new MongoClient(uri); 
   try {
-    const database = client.db('harry');
+    const database = client.db('Mahak');
     const movies = database.collection('inventory');
     // Query for a movie that has the title 'Back to the Future'
     const query = {  };
